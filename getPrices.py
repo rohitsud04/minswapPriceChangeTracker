@@ -34,7 +34,7 @@ def getMELDPrice():
 
 def calculatePCTChange(previous_price, current_price):
     pct_change = round((current_price - previous_price) * 100 / previous_price,2)
-    print("% Change = " + str(pct_change))
+    print("% Change = " + str(pct_change) + " %")
     if abs(pct_change) > 5:
         notifyTG(pct_change)
 
