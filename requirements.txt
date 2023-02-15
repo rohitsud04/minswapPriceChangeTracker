@@ -8,3 +8,4 @@ python-dotenv~=0.20.0
 pip~=22.0.4
 #DateTime~=4.4
 requests~=2.27.1
+os.path2~=0.0.4

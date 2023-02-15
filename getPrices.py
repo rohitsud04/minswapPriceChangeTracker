@@ -6,13 +6,18 @@ from ReadWriteToFile import readDataFromFile, writeDataToFile
 import settings
 
 def getLatestPrices():
-    previous_price = float(readDataFromFile())
-    print("previous: "+str(previous_price))
     current_price = getMELDPrice()
     print("new: " + str(current_price))
+
+    if(readDataFromFile() is None):
+        previous_price = None
+    else:
+        previous_price = float(readDataFromFile())
+        print("previous: " + str(previous_price))
+        calculatePCTChange(previous_price, current_price)
+
     writeDataToFile(current_price)
 
-    calculatePCTChange(previous_price,current_price )
 
 def getMELDPrice():
   url = 'https://api-mainnet-prod.minswap.org/coinmarketcap/v2/pairs'

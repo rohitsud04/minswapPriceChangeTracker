@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 # Check for HEROKU 1st
 Is_Heroku = False
 Is_Heroku = 'ENV1' in os.environ
+filepath = './LastPriceDetails.txt'
 if Is_Heroku:
     ENV = os.environ.get('ENV1')
     BOTNAME = os.environ.get('BOTNAME')
